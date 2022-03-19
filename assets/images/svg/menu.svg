@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g id="Group_108" data-name="Group 108" transform="translate(-1558 -47)">
+    <g id="Path_460" data-name="Path 460" transform="translate(1558 47)" fill="none">
+      <path d="M0,0H52V52H0Z" stroke="none"/>
+      <path d="M 1 1 L 1 51 L 51 51 L 51 1 L 1 1 M 0 0 L 52 0 L 52 52 L 0 52 L 0 0 Z" stroke="none" fill="#fff"/>
+    </g>
+    <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(1566.5 55)">
+      <path id="Path_457" data-name="Path 457" d="M4.5,18h27" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_458" data-name="Path 458" d="M4.5,9h27" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_459" data-name="Path 459" d="M4.5,27h27" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
