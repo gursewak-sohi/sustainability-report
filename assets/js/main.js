@@ -245,7 +245,6 @@ if (tabLinks && tabContent) {
 var counts = document.querySelectorAll(".counts");
 if (counts) {
     counts.forEach(count => {
-        console.log(count);
         var zero = { val: 0 },
             num = count.getAttribute('data-number'),
             split = (num + "").split("."),
