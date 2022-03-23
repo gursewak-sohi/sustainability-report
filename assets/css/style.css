@@ -474,7 +474,7 @@ img {
 
 .video-section {
     position: relative;
-    padding-top: 6.375rem;
+    padding-top: 1.875rem;
 }
 
 .video-section-bg {
@@ -1808,7 +1808,7 @@ img {
         column-gap: 9px;
     }
     .video-section {
-        padding-top: 0;
+        padding-top: 18px;
     }
     .video-section .container {
         padding-left: 0;
