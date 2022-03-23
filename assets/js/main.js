@@ -96,28 +96,6 @@ if (pauseSwiper && playSwiper) {
 }
 
 
-// Lightbox gallery Init
-let gallery = document.querySelectorAll('.video-gallery');
-if (gallery.length) {
-    for (let i = 0; i < gallery.length; i++) {
-        lightGallery(gallery[i], {
-            plugins: [lgVideo],
-            autoplayVideoOnSlide: true,
-            zoom: true
-        });
-    }
-}
-
-// Play video on button click
-var playBtn = document.getElementById('playButton');
-var playVideo = document.getElementById('video');
-if (playBtn && playBtn) {
-    playBtn.onclick = () => {
-        playVideo.click();
-
-    }
-}
-
 // Open menu
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
@@ -167,12 +145,65 @@ ScrollTrigger.defaults({
 
 
 ScrollTrigger.batch(".reveal-up", {
+    start: "top 130%",
     onEnter: elements => {
         gsap.to(elements, {
             autoAlpha: 1,
             scaleY: 1,
             transformOrigin: "center bottom",
-            duration: 1.2,
+            duration: 1.5,
+            ease: "power2.out",
+            stagger: 0.2
+        });
+    },
+    once: true
+});
+
+ScrollTrigger.batch(".fade-in-up", {
+    onEnter: elements => {
+        gsap.to(elements, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.5
+        });
+    },
+    once: true
+});
+
+ScrollTrigger.batch(".fade-in-down", {
+    onEnter: elements => {
+        gsap.to(elements, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.5
+        });
+    },
+    once: true
+});
+
+
+ScrollTrigger.batch(".slide-down", {
+    onEnter: elements => {
+        gsap.to(elements, {
+            y: 0,
+            duration: 1.5,
+            ease: "power2.out",
+            stagger: 0.5
+        });
+    },
+    once: true
+});
+
+
+ScrollTrigger.batch(".circle-reveal", {
+    onEnter: elements => {
+        gsap.to(elements, {
+            'clip-path': 'circle(50%)',
+            duration: 0.5,
             ease: "power2.out",
             stagger: 0.2
         });
@@ -186,33 +217,48 @@ ScrollTrigger.batch(".reveal-up", {
 
 var tabLinks = document.querySelectorAll(".tab-link");
 var tabContent = document.querySelectorAll(".tab-content");
-
-tabLinks.forEach(function(el) {
-    el.addEventListener("click", openTabs);
-});
-
-function openTabs(el) {
-    var btnTarget = el.currentTarget;
-    var tab = btnTarget.dataset.tab;
-
-    tabContent.forEach(function(el) {
-        el.classList.remove("active");
-    });
-
+if (tabLinks && tabContent) {
     tabLinks.forEach(function(el) {
-        el.classList.remove("active");
+        el.addEventListener("click", openTabs);
     });
 
-    document.querySelector("#" + tab).classList.add("active");
+    function openTabs(el) {
+        var btnTarget = el.currentTarget;
+        var tab = btnTarget.dataset.tab;
 
-    btnTarget.classList.add("active");
+        tabContent.forEach(function(el) {
+            el.classList.remove("active");
+        });
+
+        tabLinks.forEach(function(el) {
+            el.classList.remove("active");
+        });
+
+        document.querySelector("#" + tab).classList.add("active");
+
+        btnTarget.classList.add("active");
+    }
 }
 
-// Marquee speed for mobile 
 
-let marqueeEl = document.querySelectorAll(".marquee");
-if (marqueeEl && window.innerWidth < 768) {
-    marqueeEl.forEach(function(el) {
-        el.setAttribute('scrollamount', 8, 0);
+// counter animation
+var counts = document.querySelectorAll(".counts");
+if (counts) {
+    counts.forEach(count => {
+        console.log(count);
+        var zero = { val: 0 },
+            num = count.getAttribute('data-number'),
+            split = (num + "").split("."),
+            decimals = split.length > 1 ? split[1].length : 0;
+
+        gsap.to(zero, {
+            val: num,
+            duration: 2,
+            scrollTrigger: count,
+            onUpdate: function() {
+                let updatedCount = zero.val.toFixed(decimals)
+                count.innerHTML = updatedCount;
+            }
+        });
     });
 }

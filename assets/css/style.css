@@ -206,15 +206,34 @@ img {
     height: 100%;
 }
 
-.scaleY {
+.reveal-up {
     transform: scaleY(0);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(70px);
+}
+
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-70px);
+}
+
+.slide-down {
+    transform: translateY(-70px);
+}
+
+.circle-reveal {
+    -webkit-clip-path: circle(25%);
+    clip-path: circle(25%);
 }
 
 
 /* Home Page CSS */
 
 .header-section {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -385,12 +404,19 @@ img {
 .marquee {
     font-size: 9.625rem;
     font-weight: 300;
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+    transform: translateX(0);
+    -webkit-animation: scroll-left 30s linear infinite;
+    animation: scroll-left 30s linear infinite;
+    align-items: center;
+    -moz-column-gap: 1.875rem;
+    column-gap: 1.875rem;
 }
 
 .marquee .dot {
     font-size: 3.125rem;
-    position: relative;
-    top: -2.125rem;
 }
 
 .letter-section {
@@ -447,6 +473,7 @@ img {
 
 .video-section {
     position: relative;
+    padding-top: 6.375rem;
 }
 
 .video-section-bg {
@@ -458,6 +485,12 @@ img {
 
 .video-content {
     position: relative;
+}
+
+.video-content>iframe {
+    max-width: 100%;
+    width: 80rem;
+    height: 45rem;
 }
 
 .play-button {
@@ -989,6 +1022,7 @@ img {
     max-width: 66.625rem;
     margin: 0 auto;
     align-items: center;
+    -moz-column-gap: 8.813rem;
     column-gap: 8.813rem;
 }
 
@@ -1083,8 +1117,10 @@ img {
 }
 
 .tab-content {
+    -moz-column-gap: 11.125rem;
     column-gap: 11.125rem;
     align-items: center;
+    -webkit-animation: fadeEffect 0.6s ease;
     animation: fadeEffect 0.6s ease;
     display: none;
 }
@@ -1112,6 +1148,7 @@ img {
 .tab-content img {
     width: 38.75rem;
     height: 37.813rem;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -1145,6 +1182,17 @@ img {
     max-width: 545px;
 }
 
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes fadeEffect {
     from {
         opacity: 0;
@@ -1153,6 +1201,24 @@ img {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
 
@@ -1405,6 +1471,7 @@ img {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    -moz-column-gap: 0.75rem;
     column-gap: 0.75rem;
     bottom: 11.875rem;
     z-index: 3;
@@ -1451,13 +1518,13 @@ img {
         height: 3.75rem;
     }
     .side-menu {
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
         width: 43.875rem;
-        height: 64rem;
+        bottom: 0;
         background-color: rgba(1, 118, 91, 0.9);
-        padding: 8.813rem 5rem 8.063rem 6.313rem;
+        padding: 6.813rem 5rem 6.063rem 6.313rem;
         transition: 0.3s all ease-in-out;
         transform: translateX(100%);
     }
@@ -1686,10 +1753,13 @@ img {
     }
     .marquee {
         font-size: 49px;
+        -webkit-animation: scroll-left 8s linear infinite;
+        animation: scroll-left 8s linear infinite;
+        -moz-column-gap: 10px;
+        column-gap: 10px;
     }
     .marquee .dot {
         font-size: 17px;
-        top: -9px;
     }
     .letter-section {
         padding: 30px 0 45px;
@@ -1721,6 +1791,9 @@ img {
     .letter-footer {
         -moz-column-gap: 9px;
         column-gap: 9px;
+    }
+    .video-section {
+        padding-top: 0;
     }
     .video-section .container {
         padding-left: 0;
@@ -1869,6 +1942,9 @@ img {
         padding-left: 25px;
         width: 119%;
     }
+    .video-content>iframe {
+        height: 211px;
+    }
     /* Carta del ceo page CSS */
     .inner-banner-section {
         background-position: right 22% center;
@@ -1946,6 +2022,7 @@ img {
         min-width: 152px;
     }
     .more-content {
+        -moz-column-gap: 10px;
         column-gap: 10px;
     }
     .more-section {
@@ -1956,6 +2033,7 @@ img {
         padding-right: 0;
     }
     .more-content {
+        -moz-column-gap: 10px;
         column-gap: 10px;
         overflow-x: auto;
         overflow-y: hidden;
@@ -2175,6 +2253,7 @@ img {
         min-height: 484px;
     }
     .round-slide-icon img {
+        -webkit-filter: invert(100%) brightness(100);
         filter: invert(100%) brightness(100);
     }
     .round-swiper-slide h4 {
@@ -2229,6 +2308,7 @@ img {
     .tabs {
         justify-content: flex-start;
         margin-bottom: 40px;
+        -moz-column-gap: 10px;
         column-gap: 10px;
         overflow: auto;
     }
@@ -2257,6 +2337,7 @@ img {
     .tab-content img {
         width: 100%;
         height: 316px;
+        -o-object-fit: cover;
         object-fit: cover;
         margin-top: 20px;
     }
