@@ -66,7 +66,7 @@ ul {
 
 a {
     text-decoration: none;
-    transition: 0.3s all ease;
+    transition: 0.3s color ease;
 }
 
 img {
@@ -101,7 +101,7 @@ img {
     text-align: center;
     border-radius: 50px;
     cursor: pointer;
-    transition: 0.3s all ease;
+    transition: 0.3s background-color ease, 0.3s border-color ease, 0.3s color ease;
     font-family: var(--body-font);
 }
 
@@ -247,14 +247,27 @@ img {
     align-items: center;
     flex: 1;
     justify-content: space-between;
+    transition: 0.3s height ease;
+}
+
+.header-section.active .nav {
+    height: 6.4rem;
 }
 
 .header-light {
     background-color: rgba(99, 156, 103, 0.6);
 }
 
+.header-light.active {
+    background-color: rgba(99, 156, 103, 1) !important;
+}
+
 .header-dark {
     background-color: rgba(112, 112, 112, 0.6);
+}
+
+.header-dark.active {
+    background-color: rgba(112, 112, 112, 1) !important;
 }
 
 .navbar {
@@ -290,7 +303,11 @@ img {
     position: absolute;
     top: 0;
     width: 7.188rem;
-    width: 4.5erm;
+    transition: 0.3s width ease;
+}
+
+.header-section.active .logo-image {
+    width: 5.75rem;
 }
 
 .logo-text {
@@ -299,6 +316,11 @@ img {
     font-weight: 900;
     font-size: 1.375rem;
     letter-spacing: 0.8px;
+    transition: 0.3s padding ease;
+}
+
+.header-section.active .logo-text {
+    padding-left: 7rem;
 }
 
 .btn-menu,
@@ -474,7 +496,7 @@ img {
 
 .video-section {
     position: relative;
-    padding-top: 1.875rem;
+    /* padding-top: 1.875rem; */
 }
 
 .video-section-bg {
@@ -1690,14 +1712,23 @@ img {
     .nav {
         height: 78px;
     }
+    .header-section.active .nav {
+        height: 62px;
+    }
     .logo-image {
         width: 64px;
+    }
+    .header-section.active .logo-image {
+        width: 51px;
     }
     .logo-text {
         padding-left: 89px;
         font-size: 14px;
         line-height: 18px;
         width: 230px;
+    }
+    .header-section.active .logo-text {
+        padding-left: 71px;
     }
     .banner-text {
         padding-bottom: 98px;
@@ -1808,7 +1839,7 @@ img {
         column-gap: 9px;
     }
     .video-section {
-        padding-top: 18px;
+        /* padding-top: 18px; */
     }
     .video-section .container {
         padding-left: 0;

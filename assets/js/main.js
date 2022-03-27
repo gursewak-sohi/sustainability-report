@@ -145,7 +145,7 @@ ScrollTrigger.defaults({
 
 
 ScrollTrigger.batch(".reveal-up", {
-    start: "top 130%",
+    start: "top 120%",
     onEnter: elements => {
         gsap.to(elements, {
             autoAlpha: 1,
@@ -199,6 +199,7 @@ ScrollTrigger.batch(".slide-down", {
 });
 
 
+
 ScrollTrigger.batch(".circle-reveal", {
     onEnter: elements => {
         gsap.to(elements, {
@@ -210,6 +211,34 @@ ScrollTrigger.batch(".circle-reveal", {
     },
     once: true
 });
+
+// Home page banner animaitons
+var homePageAnim = document.getElementsByClassName("header-light");
+if (homePageAnim) {
+    let fadeIN = new TimelineLite();
+    fadeIN.fromTo(".banner-slide > img", { opacity: 0 }, { opacity: 1, duration: 1, ease: "Power0.out" })
+        .fromTo(".banner-text > h6", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0, ease: "Power0.out" }, 'start')
+        .fromTo(".banner-text > h1", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.1, ease: "Power0.out" }, 'start')
+        .fromTo(".banner-text > button", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.2, ease: "Power0.out" }, 'start')
+        .from(".header-light", { 'background-color': 'transparent', duration: 1, delay: 0.3, ease: "Power0.out" }, 'start')
+        .fromTo(".logo", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.4, ease: "Power0.out" }, 'start')
+        .fromTo(".side-menu", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.5, ease: "Power0.out" }, 'start')
+        .fromTo(".banner-swiper .swiper-button-prev", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.6, ease: "Power0.out" }, 'start')
+        .fromTo(".banner-swiper .swiper-button-next", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.7, ease: "Power0.out" }, 'start')
+        .fromTo(".banner-swiper .swiper-pagination", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.8, ease: "Power0.out" }, 'start')
+}
+
+// Inner pages animaitons
+var innerPagesAnim = document.getElementsByClassName("header-dark");
+if (innerPagesAnim) {
+    let fadeIN = new TimelineLite();
+    fadeIN.fromTo(".inner-banner-section", { opacity: 0 }, { opacity: 1, duration: 1, ease: "Power0.out" })
+        .fromTo(".inner-banner-section h1", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0, ease: "Power0.out" }, 'start')
+        .fromTo(".inner-banner-section  button", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.1, ease: "Power0.out" }, 'start')
+        .from(".header-dark", { 'background-color': 'transparent', duration: 1, delay: 0.2, ease: "Power0.out" }, 'start')
+        .fromTo(".logo", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.3, ease: "Power0.out" }, 'start')
+        .fromTo(".side-menu", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.4, ease: "Power0.out" }, 'start')
+}
 
 
 
@@ -261,3 +290,17 @@ if (counts) {
         });
     });
 }
+
+
+// Add class on scroll
+let scrollpos = window.scrollY
+const header = document.querySelector(".header-section")
+const header_height = header.offsetHeight
+
+const addClassOnScroll = () => header.classList.add("active")
+const remClassOnScroll = () => header.classList.remove("active")
+
+window.addEventListener('scroll', function() {
+    scrollpos = window.scrollY;
+    if (scrollpos >= header_height) { addClassOnScroll() } else { remClassOnScroll() }
+})
