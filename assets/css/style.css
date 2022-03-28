@@ -500,7 +500,10 @@ img {
 }
 
 .video-section-bg {
-    inset: 0 0 0 0;
+    top: 1.875rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--alt-color);
     position: absolute;
     z-index: -1;
@@ -1840,6 +1843,9 @@ img {
     }
     .video-section {
         /* padding-top: 18px; */
+    }
+    .video-section-bg {
+        top: 18px;
     }
     .video-section .container {
         padding-left: 0;
