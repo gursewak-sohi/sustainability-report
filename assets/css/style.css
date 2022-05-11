@@ -1324,11 +1324,40 @@ img {
     width: 420px !important;
 }
 
+.round-swiper-link.round-swiper-link-4 .swiper-slide:nth-child(1) {
+    top: 0;
+    left: 0;
+    height: 445px;
+    width: 445px !important;
+}
+
+.round-swiper-link.round-swiper-link-3 .swiper-slide:nth-child(1) {
+    top: 2px;
+    left: 2px;
+    height: 467px;
+    width: 649px !important;
+}
+
 .round-swiper-link .swiper-slide:nth-child(2) {
     top: -2px;
     right: 24px;
     height: 440px;
     width: 422px !important;
+}
+
+.round-swiper-link.round-swiper-link-4 .swiper-slide:nth-child(2) {
+    top: 0;
+    right: 0;
+    height: 445px;
+    width: 445px !important;
+}
+
+.round-swiper-link.round-swiper-link-3 .swiper-slide:nth-child(2) {
+    top: auto;
+    bottom: 68px;
+    right: 0;
+    height: 774px;
+    width: 447px !important;
 }
 
 .round-swiper-link .swiper-slide:nth-child(3) {
@@ -1338,11 +1367,34 @@ img {
     width: 445px !important;
 }
 
+.round-swiper-link.round-swiper-link-4 .swiper-slide:nth-child(3) {
+    top: 445px;
+    right: 0;
+    height: 445px;
+    width: 445px !important;
+}
+
+.round-swiper-link.round-swiper-link-3 .swiper-slide:nth-child(3) {
+    top: auto;
+    bottom: 2px;
+    right: auto;
+    left: 2px;
+    height: 446px;
+    width: 686px !important;
+}
+
 .round-swiper-link .swiper-slide:nth-child(4) {
     top: 437px;
     right: 186px;
     height: 430px;
     width: 522px !important;
+}
+
+.round-swiper-link.round-swiper-link-4 .swiper-slide:nth-child(4) {
+    top: 445px;
+    right: 445px;
+    height: 445px;
+    width: 445px !important;
 }
 
 .round-swiper-link .swiper-slide:nth-child(5) {
@@ -1356,9 +1408,29 @@ img {
     left: 163px;
 }
 
+.round-swiper-link-4 .link-icon-1 {
+    top: 140px;
+    left: 128px;
+}
+
+.round-swiper-link-3 .link-icon-1 {
+    top: 95px;
+    left: 172px;
+}
+
 .link-icon-2 {
     top: 85px;
     left: 163px;
+}
+
+.round-swiper-link-4 .link-icon-2 {
+    top: 140px;
+    left: 218px;
+}
+
+.round-swiper-link-3 .link-icon-2 {
+    top: 340px;
+    left: 317px;
 }
 
 .link-icon-3 {
@@ -1366,9 +1438,26 @@ img {
     right: 33px;
 }
 
+.round-swiper-link-4 .link-icon-3 {
+    top: 205px;
+    right: 123px;
+}
+
+.round-swiper-link-3 .link-icon-3 {
+    top: auto;
+    right: auto;
+    left: 210px;
+    bottom: 70px;
+}
+
 .link-icon-4 {
     top: 315px;
     right: 203px;
+}
+
+.round-swiper-link-4 .link-icon-4 {
+    top: 205px;
+    right: 223px;
 }
 
 .link-icon-5 {

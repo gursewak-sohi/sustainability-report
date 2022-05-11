@@ -13,27 +13,7 @@ if (bannerEl) {
     });
 }
 
-// Stats swiper
-var statsEl = document.getElementById('statsSwiper');
-if (statsEl) {
-    const statsSwiper = new Swiper('#statsSwiper', {
-        loop: false,
-        slidesPerView: "auto",
-        freeMode: true,
-        pagination: {
-            el: '#statsSwiper .swiper-pagination',
-        },
-        navigation: {
-            nextEl: '#statsSwiper .swiper-button-next',
-            prevEl: '#statsSwiper .swiper-button-prev',
-        },
-        breakpoints: {
-            767: {
-                freeMode: false,
-            },
-        },
-    });
-}
+
 
 // Stats swiper
 let integrityEl = document.getElementById('integritySwiper');
@@ -80,6 +60,64 @@ if (roundLinkEl) {
     });
 }
 
+// Round swiper 4
+let roundLinkEl4 = document.getElementById('roundLinkSwiper4');
+if (roundLinkEl4) {
+    var roundLinkSwiper4 = new Swiper("#roundLinkSwiper4", {
+        spaceBetween: 0,
+        slidesPerView: 4,
+        freeMode: false,
+        watchSlidesProgress: true,
+    });
+    var roundContentSwiper4 = new Swiper("#roundContentSwiper4", {
+        spaceBetween: 0,
+        loop: true,
+        speed: 500,
+        autoplay: true,
+        navigation: {
+            nextEl: "#roundContentSwiper4 .swiper-button-next",
+            prevEl: "#roundContentSwiper4 .swiper-button-prev",
+        },
+        pagination: {
+            el: '#roundContentSwiper4 .swiper-pagination',
+        },
+
+        thumbs: {
+            swiper: roundLinkSwiper4,
+        },
+    });
+}
+
+
+// Round swiper 3
+let roundLinkEl3 = document.getElementById('roundLinkSwiper3');
+if (roundLinkEl3) {
+    var roundLinkSwiper3 = new Swiper("#roundLinkSwiper3", {
+        spaceBetween: 0,
+        slidesPerView: 3,
+        freeMode: false,
+        watchSlidesProgress: true,
+    });
+    var roundContentSwiper3 = new Swiper("#roundContentSwiper3", {
+        spaceBetween: 0,
+        loop: true,
+        speed: 500,
+        autoplay: true,
+        navigation: {
+            nextEl: "#roundContentSwiper3 .swiper-button-next",
+            prevEl: "#roundContentSwiper3 .swiper-button-prev",
+        },
+        pagination: {
+            el: '#roundContentSwiper3 .swiper-pagination',
+        },
+
+        thumbs: {
+            swiper: roundLinkSwiper3,
+        },
+    });
+}
+
+
 // Round swiper play and pause
 var pauseSwiper = document.getElementById('pauseSwiper');
 var playSwiper = document.getElementById('playSwiper');
@@ -94,6 +132,37 @@ if (pauseSwiper && playSwiper) {
         return false
     }
 }
+
+// Round swiper4 play and pause
+var pauseSwiper4 = document.getElementById('pauseSwiper4');
+var playSwiper4 = document.getElementById('playSwiper4');
+if (pauseSwiper4 && playSwiper4) {
+    pauseSwiper4.onclick = () => {
+        roundContentSwiper4.autoplay.stop();
+        return false
+    }
+
+    playSwiper4.onclick = () => {
+        roundContentSwiper4.autoplay.start();
+        return false
+    }
+}
+
+// Round swiper3 play and pause
+var pauseSwiper3 = document.getElementById('pauseSwiper3');
+var playSwiper3 = document.getElementById('playSwiper3');
+if (pauseSwiper3 && playSwiper3) {
+    pauseSwiper3.onclick = () => {
+        roundContentSwiper3.autoplay.stop();
+        return false
+    }
+
+    playSwiper3.onclick = () => {
+        roundContentSwiper3.autoplay.start();
+        return false
+    }
+}
+
 
 
 // Open menu
@@ -269,25 +338,76 @@ if (tabLinks && tabContent) {
     }
 }
 
+// GSAP Counter Animation Function
+const gapAnimateCount = (count) => {
+    var zero = { val: 0 },
+        num = count.getAttribute('data-number'),
+        split = (num + "").split("."),
+        decimals = split.length > 1 ? split[1].length : 0;
+
+    gsap.to(zero, {
+        val: num,
+        duration: 2,
+        scrollTrigger: count,
+        onUpdate: function() {
+            let updatedCount = zero.val.toFixed(decimals)
+            count.innerHTML = updatedCount;
+        }
+    });
+}
+
+// Stats swiper
+var statsEl = document.getElementById('statsSwiper');
+if (statsEl) {
+    let onceGapInit = false;
+    const statsSwiper = new Swiper('#statsSwiper', {
+        loop: false,
+        slidesPerView: "auto",
+        freeMode: true,
+        pagination: {
+            el: '#statsSwiper .swiper-pagination',
+        },
+        navigation: {
+            nextEl: '#statsSwiper .swiper-button-next',
+            prevEl: '#statsSwiper .swiper-button-prev',
+        },
+        breakpoints: {
+            767: {
+                freeMode: false,
+            },
+        },
+        on: {
+            init: function() {
+                onceGapInit = true;
+            },
+        },
+    });
+    let countsSlide2 = document.querySelectorAll(".counts-slide-2");
+    let countsSlide3 = document.querySelectorAll(".counts-slide-3");
+    if (countsSlide2 && countsSlide3) {
+        statsSwiper.on('slideChange', function() {
+            if (onceGapInit) {
+                countsSlide2.forEach(count => {
+                    gapAnimateCount(count);
+                });
+                countsSlide3.forEach(count => {
+                    gapAnimateCount(count);
+                });
+            }
+            if (statsSwiper.isEnd) {
+                onceGapInit = false;
+            }
+        });
+    }
+}
+
+
 
 // counter animation
 var counts = document.querySelectorAll(".counts");
 if (counts) {
     counts.forEach(count => {
-        var zero = { val: 0 },
-            num = count.getAttribute('data-number'),
-            split = (num + "").split("."),
-            decimals = split.length > 1 ? split[1].length : 0;
-
-        gsap.to(zero, {
-            val: num,
-            duration: 2,
-            scrollTrigger: count,
-            onUpdate: function() {
-                let updatedCount = zero.val.toFixed(decimals)
-                count.innerHTML = updatedCount;
-            }
-        });
+        gapAnimateCount(count);
     });
 }
 
