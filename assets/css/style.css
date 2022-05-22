@@ -1622,6 +1622,127 @@ img {
     right: -2px;
 }
 
+
+/* Omni Section */
+
+.omni-section {
+    padding: 0.625rem 0 7.5rem;
+}
+
+.omni-content {
+    width: 37.5rem;
+    height: 37.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.omni-content img {
+    width: 100%;
+}
+
+.omni-content .client {
+    width: 9.75rem;
+    height: 9.75rem;
+    background-color: var(--white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.omni-content .client img {
+    width: 4.813rem;
+}
+
+.omni-content .divider-lines {
+    position: absolute;
+    width: 32.688rem;
+    left: 50%;
+    bottom: 3.25rem;
+    transform: translateX(-50%);
+}
+
+.omni-content .outline-arrows {
+    width: 34rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0.625rem;
+}
+
+.omni-content .tienda {
+    width: 3.813rem;
+    position: absolute;
+    left: 6rem;
+    top: 9.438rem;
+}
+
+.omni-content .domicilio {
+    width: 5.375rem;
+    position: absolute;
+    left: 50%;
+    top: 4.688rem;
+    transform: translateX(-50%);
+}
+
+.omni-content .arrow-sides {
+    width: 13.625rem;
+    position: absolute;
+    left: 50%;
+    top: 10.438rem;
+    transform: translateX(-50%);
+}
+
+.omni-content .no-presencial {
+    width: 6.125rem;
+    position: absolute;
+    right: 5.125rem;
+    top: 9.625rem;
+}
+
+.omni-content .click-collect {
+    width: 6.313rem;
+    position: absolute;
+    left: 3.75rem;
+    top: 17.938rem;
+}
+
+.omni-content .rrss {
+    width: 7.063rem;
+    position: absolute;
+    left: 7rem;
+    bottom: 7.688rem;
+}
+
+.omni-content .telefon {
+    width: 8rem;
+    position: absolute;
+    left: 14.438rem;
+    bottom: 4.813rem;
+}
+
+.omni-content .app {
+    width: 1.938rem;
+    position: absolute;
+    right: 10.375rem;
+    bottom: 7.375rem;
+}
+
+.omni-content .falabella {
+    width: 6.438rem;
+    position: absolute;
+    right: 3.563rem;
+    bottom: 14.563rem;
+}
+
 @media (max-width: 1919px) {
     /* Home Page CSS */
     .btn-menu {
@@ -2488,5 +2609,70 @@ img {
     }
     .round-slider-wrapper {
         transform: translateX(0);
+    }
+    .omni-section {
+        padding: 10px 0 70px;
+    }
+    .omni-content {
+        width: 320px;
+        height: 320px;
+    }
+    .omni-content .client {
+        width: 83px;
+        height: 83px;
+    }
+    .omni-content .client img {
+        width: 41px;
+    }
+    .omni-content .divider-lines {
+        width: 279px;
+        bottom: 27px;
+    }
+    .omni-content .outline-arrows {
+        width: 290px;
+        margin-left: 4px;
+    }
+    .omni-content .tienda {
+        width: 33px;
+        left: 51px;
+        top: 80px;
+    }
+    .omni-content .domicilio {
+        width: 46px;
+        top: 40px;
+    }
+    .omni-content .arrow-sides {
+        width: 117px;
+        top: 89px;
+    }
+    .omni-content .no-presencial {
+        width: 52px;
+        right: 44px;
+        top: 82px;
+    }
+    .omni-content .click-collect {
+        width: 54px;
+        left: 32px;
+        top: 153px;
+    }
+    .omni-content .rrss {
+        width: 61px;
+        left: 59px;
+        bottom: 64px;
+    }
+    .omni-content .telefon {
+        width: 69px;
+        left: 123px;
+        bottom: 41px;
+    }
+    .omni-content .app {
+        width: 17px;
+        right: 88px;
+        bottom: 62px;
+    }
+    .omni-content .falabella {
+        width: 56px;
+        right: 29px;
+        bottom: 123px;
     }
 }

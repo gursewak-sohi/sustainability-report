@@ -309,6 +309,43 @@ if (innerPagesAnim) {
         .fromTo(".side-menu", { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.4, ease: "Power0.out" }, 'start')
 }
 
+// Omni Section animaitons
+var omniAnim = document.getElementsByClassName("omni-content");
+if (omniAnim) {
+
+    const fadeIN = gsap.timeline({ defaults: { duration: 1.2, ease: "power4.out" } })
+
+    ScrollTrigger.create({
+        animation: fadeIN,
+        trigger: ".omni-content",
+        start: "center 55%",
+        end: "+=2500",
+        pin: true,
+        scrub: 1,
+        // onLeave: self => {
+        //     let scroll = self.scroll() - (self.end - self.start);
+        //     self.kill();
+        //     self.scroll(scroll);
+        //     fadeIN.progress(1);
+        // },
+        // markers: true,
+        anticipatePin: 1,
+    })
+
+
+    fadeIN.fromTo(".client", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".tienda", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".domicilio", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".no-presencial", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".arrow-sides", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1 })
+        .fromTo(".click-collect", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".rrss", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".telefon", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".app", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".falabella", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+        .fromTo(".divider-lines", { opacity: 0 }, { opacity: 1 })
+        .fromTo(".outline-arrows", { opacity: 0 }, { opacity: 1 })
+}
 
 
 // tabs

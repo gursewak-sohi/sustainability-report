@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="219px" height="17px" viewBox="0 0 219 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>linea_tienda_no</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="linea_tienda_no" transform="translate(0.493214, 1.174275)" stroke="#01765B" stroke-width="0.740283775">
+            <polyline id="Path" points="101.256015 6.51079581 0.240592227 6.51079581 5.35965453 1.67304133"></polyline>
+            <polyline id="Path" points="101.256015 6.44417027 0.240592227 6.44417027 5.35965453 11.2856262"></polyline>
+            <polyline id="Path" points="116.731647 6.44417027 217.74707 6.44417027 212.628007 11.2856262"></polyline>
+            <polyline id="Path" points="116.731647 6.51079581 217.74707 6.51079581 212.628007 1.67304133"></polyline>
+            <circle id="Oval" cx="108.514497" cy="7.31770512" r="7.25848242"></circle>
+        </g>
+    </g>
+</svg>

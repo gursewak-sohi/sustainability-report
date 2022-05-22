@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="523px" height="294px" viewBox="0 0 523 294" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>lineas_divisoras</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="lineas_divisoras" transform="translate(0.514189, 0.787477)" stroke="#FFFFFF" stroke-width="0.740283775">
+            <line x1="0.0814312153" y1="0.177668106" x2="170.702036" y2="31.2621838" id="Path"></line>
+            <line x1="350.898211" y1="31.2621838" x2="521.518816" y2="0.177668106" id="Path"></line>
+            <line x1="180.718075" y1="96.4811845" x2="35.5632326" y2="181.202961" id="Path"></line>
+            <line x1="482.979642" y1="181.202961" x2="337.8248" y2="96.4811845" id="Path"></line>
+            <line x1="229.103023" y1="130.619371" x2="167.00802" y2="292.534238" id="Path"></line>
+            <line x1="288.866132" y1="131.740901" x2="346.841456" y2="291.409007" id="Path"></line>
+        </g>
+    </g>
+</svg>
