@@ -313,22 +313,15 @@ if (innerPagesAnim) {
 var omniAnim = document.getElementsByClassName("omni-content");
 if (omniAnim) {
 
-    const fadeIN = gsap.timeline({ defaults: { duration: 1.2, ease: "power4.out" } })
+    const fadeIN = gsap.timeline({ defaults: { duration: 0.4, ease: "power4.out" } })
 
     ScrollTrigger.create({
         animation: fadeIN,
         trigger: ".omni-content",
-        start: "center 55%",
+        start: "center 85%",
         end: "+=2500",
-        pin: true,
-        scrub: 1,
-        // onLeave: self => {
-        //     let scroll = self.scroll() - (self.end - self.start);
-        //     self.kill();
-        //     self.scroll(scroll);
-        //     fadeIN.progress(1);
-        // },
-        // markers: true,
+        pin: false,
+        scrub: false,
         anticipatePin: 1,
     })
 
